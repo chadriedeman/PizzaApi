@@ -1,7 +1,9 @@
-﻿namespace PizzaAPI.Services
+﻿using PizzaAPI.Data.Models;
+
+namespace PizzaAPI.Services
 {
     public interface IOrdersService
     {
-        void CreateNewOrder();
+        void CreateNewOrder(PizzaOrder pizzaOrder);
     }
 }
