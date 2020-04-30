@@ -34,7 +34,7 @@ namespace PizzaAPI
             services.AddScoped<IPizzasRepository, PizzasRepository>(x => new PizzasRepository());
 
             services.AddScoped<IPizzasService, PizzasService>(x => new PizzasService(x.GetRequiredService<IRepository<PizzaContext>>()));
-            services.AddScoped<IOrdersService, OrdersService>(x => new OrdersService(x.GetRequiredService<IRepository<PizzaContext>>()));
+            services.AddScoped<IOrdersService, OrdersService>(x => new OrdersService(x.GetRequiredService<IOrdersRepository>()));
 
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }

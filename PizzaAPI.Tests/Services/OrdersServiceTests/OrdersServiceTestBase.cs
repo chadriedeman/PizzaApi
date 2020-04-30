@@ -1,12 +1,17 @@
-﻿using System;
+﻿using PizzaAPI.Services;
 
 namespace PizzaAPI.Tests.Services.OrdersServiceTests
 {
     public abstract class OrdersServiceTestBase : IArrangeActAssert
     {
-        public void Arrange()
+
+        protected OrdersService _ordersService;
+
+        public virtual void Arrange()
         {
-            throw new NotImplementedException();
+            var repositoryMock = new MockOrdersRepository();
+
+            _ordersService = new OrdersService(repositoryMock);
         }
 
         public abstract void Act();

@@ -1,5 +1,4 @@
-﻿using PizzaAPI.Data;
-using PizzaAPI.Data.Models;
+﻿using PizzaAPI.Data.Models;
 using PizzaAPI.Data.Repositories;
 using System;
 
@@ -7,9 +6,9 @@ namespace PizzaAPI.Services
 {
     public class OrdersService : IOrdersService
     {
-        private readonly IRepository<PizzaContext> _repository;
+        private readonly IOrdersRepository _repository;
 
-        public OrdersService(IRepository<PizzaContext> repository)
+        public OrdersService(IOrdersRepository repository)
         {
             _repository = repository;
         }
@@ -19,7 +18,7 @@ namespace PizzaAPI.Services
             if (pizzaOrder == null)
                 throw new ArgumentException("No pizza order was given to CreateNewOrder");
 
-            _repository.Insert(pizzaOrder);
+            _repository.CreateNewOrder(pizzaOrder);
         }
     }
 }
