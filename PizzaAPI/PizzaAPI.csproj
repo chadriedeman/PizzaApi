@@ -13,6 +13,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\PizzaAPI.Data\PizzaAPI.Data.csproj" />
+      <ProjectReference Include="..\PizzaAPI.Services\PizzaAPI.Services.csproj" />
     </ItemGroup>
 
 </Project>

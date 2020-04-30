@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PizzaAPI.Data;
 using PizzaAPI.Data.Repositories;
+using PizzaAPI.Services;
 
 namespace PizzaAPI
 {
@@ -28,6 +29,10 @@ namespace PizzaAPI
             
             services.AddScoped<IRepository<PizzaContext>, Repository<PizzaContext>>();
             services.AddScoped<ITimeRepository, TimeRepository>();
+
+            services.AddSingleton<IPizzasService, PizzasService>(x => new PizzasService());
+
+            services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
