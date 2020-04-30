@@ -6,7 +6,7 @@ namespace PizzaAPI.Services
     public interface IPizzasService
     {
         List<Pizza> GetPizzas();
-        void AddPizza();
+        void AddPizza(Pizza pizza);
         void UpdatePizza(int id);
         void DeletePizza(int id);
     }

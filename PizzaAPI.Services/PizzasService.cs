@@ -23,7 +23,7 @@ namespace PizzaAPI.Services
                 .ToList();
         }
 
-        public void AddPizza()
+        public void AddPizza(Pizza pizza)
         {
             throw new NotImplementedException();
         }
