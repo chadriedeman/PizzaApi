@@ -10,5 +10,20 @@ namespace PizzaAPI.Services
         {
             throw new NotImplementedException();
         }
+
+        public void AddPizza()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void UpdatePizza(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void DeletePizza(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
