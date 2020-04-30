@@ -51,8 +51,10 @@ namespace PizzaAPI.Services
         {
             var pizza = _repository.GetById<Pizza>(id);
 
-            if (pizza != null)
-                _repository.Delete<Pizza>(id);
+            if (pizza == null)
+                throw new ArgumentException($"No pizza exists with ID: {id}");
+
+            _repository.Delete<Pizza>(id);
         }
     }
 }

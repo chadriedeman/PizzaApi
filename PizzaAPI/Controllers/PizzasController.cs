@@ -83,7 +83,7 @@ namespace PizzaAPI.Controllers
         {
             try
             {
-                // TODO
+                _pizzasService.DeletePizza(id);
 
                 return Ok();
             }
