@@ -31,7 +31,7 @@ namespace PizzaAPI
             services.AddScoped<ITimeRepository, TimeRepository>();
 
             services.AddSingleton<IPizzasService, PizzasService>(x => new PizzasService(x.GetRequiredService<IRepository<PizzaContext>>()));
-            services.AddSingleton<IOrdersService, OrdersService>(x => new OrdersService());
+            services.AddSingleton<IOrdersService, OrdersService>(x => new OrdersService(x.GetRequiredService<IRepository<PizzaContext>>()));
 
             services.AddMvc(option => option.EnableEndpointRouting = false);
         }
