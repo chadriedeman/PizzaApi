@@ -7,7 +7,7 @@ namespace PizzaAPI.Services
     {
         List<Pizza> GetPizzas();
         void AddPizza(Pizza pizza);
-        void UpdatePizza(int id);
+        void UpdatePizza(int id, Pizza updatedPizza);
         void DeletePizza(int id);
     }
 }

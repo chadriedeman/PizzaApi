@@ -18,24 +18,39 @@ namespace PizzaAPI.Services
 
         public List<Pizza> GetPizzas()
         {
-
             return _repository.Get<Pizza>()
                 .ToList();
         }
 
         public void AddPizza(Pizza pizza)
         {
-            throw new NotImplementedException();
+            if (pizza == null)
+                throw new ArgumentException("No pizza was given to AddPizza");
+
+            _repository.Insert(pizza);
+
+            _repository.SaveChanges();
         }
 
-        public void UpdatePizza(int id)
+        public void UpdatePizza(int id, Pizza updatedPizza)
         {
-            throw new NotImplementedException();
+            if (updatedPizza == null)
+                throw new ArgumentException("No pizza was given to UpdatePizza");
+
+            var pizza = _repository.GetById<Pizza>(id);
+
+            if(pizza == null)
+                throw new ArgumentException($"No pizza exists for ID: {id}");
+
+            // TODO:
         }
 
         public void DeletePizza(int id)
         {
-            throw new NotImplementedException();
+            var pizza = _repository.GetById<Pizza>(id);
+
+            if (pizza != null)
+                _repository.Delete<Pizza>(id);
         }
     }
 }
