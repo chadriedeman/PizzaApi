@@ -22,7 +22,7 @@ namespace PizzaAPI.Controllers
             _logger = logger;
         }
 
-        [HttpPost("[action]")]
+        [HttpPost()]
         public async Task<IActionResult> CreateNewOrder()
         {
             try

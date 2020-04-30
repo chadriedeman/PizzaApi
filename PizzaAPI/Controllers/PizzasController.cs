@@ -23,7 +23,7 @@ namespace PizzaAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet("[action]")]
+        [HttpGet()]
         public List<Pizza> GetPizzas()
         {
             try
@@ -37,7 +37,7 @@ namespace PizzaAPI.Controllers
             }
         }
 
-        [HttpPost("[action]")]
+        [HttpPost()]
         public async Task<IActionResult> AddPizza()
         {
             try
@@ -62,7 +62,7 @@ namespace PizzaAPI.Controllers
             }
         }
 
-        [HttpPut("[action]/{id}")]
+        [HttpPut("/{id}")]
         public IActionResult UpdatePizza(int id)
         {
             try
@@ -78,7 +78,7 @@ namespace PizzaAPI.Controllers
             }
         }
 
-        [HttpDelete("[action]/{id}")]
+        [HttpDelete("/{id}")]
         public IActionResult DeletePizza(int id)
         {
             try
