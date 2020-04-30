@@ -1,7 +1,9 @@
-﻿namespace PizzaAPI.Data.Repositories
+﻿using PizzaAPI.Data.Models;
+
+namespace PizzaAPI.Data.Repositories
 {
     public interface IOrdersRepository
     {
-        // TODO
+        void CreateNewOrder(PizzaOrder pizzaOrder);
     }
 }

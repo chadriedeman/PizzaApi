@@ -1,7 +1,12 @@
-﻿namespace PizzaAPI.Data.Repositories
+﻿using PizzaAPI.Data.Models;
+
+namespace PizzaAPI.Data.Repositories
 {
     public class OrdersRepository : IOrdersRepository
     {
-        // TODO
+        public void CreateNewOrder(PizzaOrder pizzaOrder)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
