@@ -23,7 +23,7 @@ namespace PizzaAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet()]
+        [HttpGet]
         public List<Pizza> GetPizzas()
         {
             try
@@ -37,7 +37,7 @@ namespace PizzaAPI.Controllers
             }
         }
 
-        [HttpPost()]
+        [HttpPost]
         public async Task<IActionResult> AddPizza()
         {
             try
