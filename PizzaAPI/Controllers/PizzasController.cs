@@ -62,12 +62,21 @@ namespace PizzaAPI.Controllers
             }
         }
 
-        [HttpPut("/{id}")]
-        public IActionResult UpdatePizza(int id)
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatePizza(int id)
         {
             try
             {
-                // TODO
+                using var reader = new StreamReader(Request.Body, Encoding.UTF8);
+
+                var requestBodyAsJsonString = await reader.ReadToEndAsync();
+
+                if (string.IsNullOrWhiteSpace(requestBodyAsJsonString))
+                    throw new ArgumentException("No request body was given to AddPizza");
+
+                var pizza = JsonConvert.DeserializeObject<Pizza>(requestBodyAsJsonString);
+
+                _pizzasService.UpdatePizza(id, pizza);
 
                 return Ok();
             }
@@ -78,7 +87,7 @@ namespace PizzaAPI.Controllers
             }
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete("{id}")]
         public IActionResult DeletePizza(int id)
         {
             try
