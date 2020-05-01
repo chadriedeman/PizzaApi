@@ -2,8 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PizzaAPI.Data.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace PizzaAPI.Tests.Services.OrdersServiceTests.CreateNewOrderTests
 {
