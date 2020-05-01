@@ -1,12 +1,15 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FluentAssertions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using PizzaAPI.Data.Models;
-using System;
 
 namespace PizzaAPI.Tests.Services.OrdersServiceTests.CreateNewOrderTests
 {
+    [TestClass]
     public class WhenCreateNewOrderWithValidPizzaOrder : OrdersServiceTestBase
     {
         private PizzaOrder _validPizzaOrder;
+
+        private int _numberOfPizzaOrdersBeforeNewOrder = 0;
 
         public WhenCreateNewOrderWithValidPizzaOrder()
         {
@@ -18,9 +21,14 @@ namespace PizzaAPI.Tests.Services.OrdersServiceTests.CreateNewOrderTests
         {
             base.Arrange();
 
+            _numberOfPizzaOrdersBeforeNewOrder = _mockOrdersRepository.GetPizzaOrders().Count;
+
             _validPizzaOrder = new PizzaOrder
             {
-                // TODO
+                OrderId = 1,
+                PizzaId = 1,
+                Size = "Medium",
+                Pizza = new Pizza()
             };
         }
 
@@ -32,7 +40,7 @@ namespace PizzaAPI.Tests.Services.OrdersServiceTests.CreateNewOrderTests
         [TestMethod]
         public void ThenPizzaOrderShouldHaveBeenAdded()
         {
-
+            (_mockOrdersRepository.GetPizzaOrders().Count).Should().BeGreaterThan(_numberOfPizzaOrdersBeforeNewOrder);
         }
     }
 }

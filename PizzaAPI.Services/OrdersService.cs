@@ -1,6 +1,7 @@
 ﻿using PizzaAPI.Data.Models;
 using PizzaAPI.Data.Repositories;
 using System;
+using System.Collections.Generic;
 
 namespace PizzaAPI.Services
 {
@@ -19,6 +20,11 @@ namespace PizzaAPI.Services
                 throw new ArgumentException("No pizza order was given to CreateNewOrder");
 
             _repository.CreateNewOrder(pizzaOrder);
+        }
+
+        public List<PizzaOrder> GetPizzaOrders()
+        {
+            return _repository.GetPizzaOrders();
         }
     }
 }

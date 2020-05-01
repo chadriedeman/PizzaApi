@@ -49,5 +49,10 @@ namespace PizzaAPI.Tests.Services.OrdersServiceTests
         {
             _pizzaOrders.Add(pizzaOrder);
         }
+
+        public List<PizzaOrder> GetPizzaOrders()
+        {
+            return _pizzaOrders;
+        }
     }
 }

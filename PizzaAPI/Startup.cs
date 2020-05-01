@@ -30,7 +30,7 @@ namespace PizzaAPI
             services.AddScoped<IRepository<PizzaContext>, Repository<PizzaContext>>();
             services.AddScoped<ITimeRepository, TimeRepository>();
 
-            services.AddScoped<IOrdersRepository, OrdersRepository>(x => new OrdersRepository());
+            services.AddScoped<IOrdersRepository, OrdersRepository>(x => new OrdersRepository("[database connection string would go here]"));
             services.AddScoped<IPizzasRepository, PizzasRepository>(x => new PizzasRepository());
 
             services.AddScoped<IPizzasService, PizzasService>(x => new PizzasService(x.GetRequiredService<IRepository<PizzaContext>>()));
