@@ -38,7 +38,7 @@ namespace PizzaAPI.Tests.Services.OrdersServiceTests.CreateNewOrderTests
         }
 
         [TestMethod]
-        public void ThenPizzaOrderShouldHaveBeenAdded()
+        public void ThenPizzaOrderShouldBeAdded()
         {
             (_mockOrdersRepository.GetPizzaOrders().Count).Should().BeGreaterThan(_numberOfPizzaOrdersBeforeNewOrder);
         }
