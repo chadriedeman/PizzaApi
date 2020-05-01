@@ -6,7 +6,6 @@ namespace PizzaAPI.Data.Repositories
     /// <summary>
     ///  This class is where I would encapsulate the logic to access a database, query
     ///  for pizza orders, add new pizza orders to the appropriate table, etc.
-    ///  
     /// </summary>
     public class OrdersRepository : IOrdersRepository
     {
